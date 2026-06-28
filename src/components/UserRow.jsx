@@ -22,20 +22,20 @@ export default function UserRow({ user, onEditClick, onDeleteClick }) {
 
   return (
     <tr>
-      <td className="user-id-col">#{user.id}</td>
-      <td className="user-name-col">{user.firstName}</td>
-      <td>{user.lastName}</td>
-      <td>
+      <td className="user-id-col" data-label="ID">#{user.id}</td>
+      <td className="user-name-col" data-label="First Name">{user.firstName}</td>
+      <td data-label="Last Name">{user.lastName}</td>
+      <td data-label="Email">
         <a href={`mailto:${user.email}`} className="user-email-col">
           {user.email}
         </a>
       </td>
-      <td>
+      <td data-label="Department">
         <span className={`badge ${getDeptBadgeClass(user.department)}`}>
           {user.department}
         </span>
       </td>
-      <td>
+      <td data-label="Actions">
         <div className="actions-cell">
           <button
             className="btn btn-secondary btn-icon"
